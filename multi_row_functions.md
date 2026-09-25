@@ -18,7 +18,7 @@ NO OF EMPLOYEES
 ---------------
               1
 ```
-
+---
 2. WAQTD TOTAL SALARY NEEDED TO PAY EMPLOYEES WORKING AS CLERK.
 ```SQL
 SELECT SUM(SAL) "TOTAL CLERK SALARY"
@@ -30,7 +30,7 @@ TOTAL CLERK SALARY
 ------------------
               4150
 ```
-
+---
 3. WAQTD AVERAGE SALARY NEEDED TO PAY ALL EMPLOYEES.
 ```SQL
 SELECT AVG(SAL) "AVERAGE SALARY"
@@ -41,7 +41,7 @@ AVERAGE SALARY
 --------------
     2073.21429
 ```
-
+---
 4. WAQTD NUMBER OF EMPLOYEES HAVING 'A' AS THEIR FIRST CHARACTER.
 ```SQL
 SELECT COUNT(*) "NO OF EMPLOYEES"
@@ -53,6 +53,7 @@ NO OF EMPLOYEES
 ---------------
               2
 ```
+---
 5. WAQTD NUMBER OF EMPLOYEES WORKING AS CLERK OR MANAGER.
 ```SQL
 SELECT COUNT(*) "NO OF CLERKS AND MGRS"
@@ -64,6 +65,7 @@ NO OF CLERKS AND MGRS
 ---------------------
                     7
 ```
+---
 6. WAQTD TOTAL SALARY NEEDED TO PAY EMPLOYEES HIRED IN FEB.
 ```SQL
 SELECT SUM(SAL) "TOTAL FEB EMP SALARY"
@@ -75,7 +77,7 @@ TOTAL FEB EMP SALARY
 --------------------
                 2850
 ```
-
+---
 7. WAQTD NUMBER OF EMPLOYEES REPORTING TO 7839 (MGR).
 ```SQL
 SELECT COUNT(*) "NO OF EMP REPORTING MGR(7839)"
@@ -87,7 +89,7 @@ NO OF EMP REPORTING MGR(7839)
 -----------------------------
                             3
 ```
-
+---
 8. WAQTD NUMBER OF EMPLOYEES GETTING COMISSION IN DEPTNO 30.
 ```SQL
 SELECT COUNT(*) "NO OF COMM EMP IN DEPT 30"
@@ -99,7 +101,7 @@ NO OF COMM EMP IN DEPT 30
 -------------------------
                         4
 ```
-
+---
 9. WAQTD AVG SAL, TOTAL SAL, NUMBER OF EMPS AND MAXIMUM SALARY GIVEN TO EMPLOYEES WORKING AS PERSIDENT.
 ```SQL
 SELECT AVG(SAL) "AVERAGE SALARY OF PRESIDENT/S", SUM(SAL) "TOTAL SALARY PRESIDENT/S", COUNT(*) "NO OF PRESIDENT/S", MAX(SAL) "MAXIMUM SAL AMONG PRESIDENTS"
@@ -111,7 +113,7 @@ AVERAGE SALARY OF PRESIDENT/S TOTAL SALARY PRESIDENT/S NO OF PRESIDENT/S MAXIMUM
 ----------------------------- ------------------------ ----------------- ----------------------------
                          5000                     5000                 1                         5000
 ```
-
+---
 10. WAQTD NUMBER OF EMPLOYEES HAVING 'A' IN THEIR NAMES.
 ```SQL
 SELECT COUNT(*) "NO EMPs NAME START WITH 'A'"
@@ -123,7 +125,7 @@ NO EMPs NAME START WITH 'A'
 ---------------------------
                           2
 ```
-
+---
 11. WAQTD NUMBER OF EMPS AND TOTAL SALARY NEEDED TO PAY THE EMPLOYEES WHO HAVE 2 CONSICUTIVE L'S IN THEIR NAMES.
 ```SQL
 SELECT COUNT(*) "NO OF EMPs,ENAME HAS 'LL'", SUM(SAL) "TOTAL SAL,ENAME HAS 'LL'"
@@ -135,7 +137,7 @@ NO OF EMPs,ENAME HAS 'LL' TOTAL SAL,ENAME HAS 'LL'
 ------------------------- ------------------------
                         2                     2900
 ```
-
+---
 12. WAQTD NUMBER OF DEPARTMENTS PRESENT IN EMPLOYEE TABLE.
 ```SQL
 SELECT COUNT(DISTINCT DEPTNO) "NO OF DEPTs"
@@ -146,7 +148,7 @@ NO OF DEPTs
 ------------
             3
 ```
-
+---
 13. WAQTD NUMBER OF EMPLOYEES HAVING CHARACTER 'Z' IN THEIR NAMES.
 ```SQL
 SELECT COUNT(*) "NO OF EMP,WHO HAS 'Z' IN ENAME"
@@ -158,7 +160,7 @@ NO OF EMP,WHO HAS 'Z' IN ENAME
 ------------------------------
                              0
 ```
-
+---
 14. WAQTD NUMBER OF EMPLOYEES HAVING 'S' IN THEIR NAMES.
 ```SQL
 SELECT COUNT(*) "NO OF EMP,WHO HAS 'S' IN ENAME"
@@ -170,7 +172,7 @@ NO OF EMP,WHO HAS 'S' IN ENAME
 ------------------------------
                              5
 ```
-
+---
 15. WAQTD TOTAL SALARY GIVEN TO EMPLOYEES WORKING AS CLERK IN DEPT 30.
 ```SQL 
 SELECT SUM(SAL) "NO OF CLERKS IN DEPT 30"
@@ -182,7 +184,7 @@ NO OF CLERKS IN DEPT 30
 -----------------------
                     950
 ``` 
-
+---
 16. WAQTD MAXIMUM SALARY GIVEN TO THE EMPLOYEES WORKING AS ANALYST.
 ```SQL
 SELECT MAX(SAL) "MAXIMUM SALARY OF ANALYSTS"
@@ -194,7 +196,7 @@ MAXIMUM SALARY OF ANALYSTS
 --------------------------
                       3000
 ```                     
-
+---
 17. WAQTD NUMBER OF DISTINCT SALARIES PRESENT IN EMPLOYEE TABLE.
 ```SQL
 SELECT COUNT(DISTINCT SAL) "NO OF DISTINCT SALARY"
@@ -205,7 +207,7 @@ NO OF DISTINCT SALARY
 ---------------------
                    12
 ```
-
+---
 18. WAQTD NUMBER OF JOBS PRESENT IN EMPLOYEE TABLE.
 ```SQL
 SELECT COUNT(DISTINCT JOB) "NO OF JOBS"
@@ -216,7 +218,7 @@ NO OF JOBS
 ----------
          5
 ```
-
+---
 19. WAQTD AVG SALARY GIVEN TO THE CLERK.
 ```SQL
 SELECT AVG(SAL) "CLERKS AVERAGE SALARY"
@@ -228,7 +230,7 @@ CLERKS AVERAGE SALARY
 ---------------------
                1037.5
 ```
-
+---
 20. WAQTD MINIMUM SALARY GIVEN TO THE EMPLOYEES WHO WORK IN DEPT 10 AS MANAGER OR A CLERK
 ```SQL
 SELECT MIN(SAL) "MIN MGR/CLRK SAL IN DEPT 10"
@@ -240,3 +242,4 @@ MIN MGR/CLRK SAL IN DEPT 10
 ------------------------------
                           1300
 ```
+---    

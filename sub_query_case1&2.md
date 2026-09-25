@@ -1,0 +1,151 @@
+## ASSIGNMENT ON SUB-QUERY CASE 1 & 2
+
+1. WAQTD NAMES OF THE EMPLOYEES EARNING MORE THAN SCOTT IN ACCOUNTING DEPT.
+```SQL
+SELECT ENAME NAME
+FROM EMP
+WHERE SAL > (SELECT SAL 
+                FROM EMP 
+                WHERE ENAME = 'SCOTT');
+            
+-- OUTPUT
+NAME
+----------
+KING
+```
+---
+2. WAQTD DETAILS OF THE EMPLOYEES WORKING AS MANAGER IN THE LOCATION CHICAGO.
+```SQL
+SELECT * 
+FROM EMP
+WHERE JOB = 'MANAGER' 
+AND DEPTNO IN (SELECT DEPTNO 
+                FROM DEPT   
+                WHERE LOC = 'CHICAGO');
+            
+-- OUTPUT
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
+```
+---
+3. WAQTD NAME AND SAL OF THE EMPLOYEES EARNING MORE THAN KING IN THE DEPT ACCOUNTING.
+```SQL
+SELECT ENAME NAME, SAL SALARY
+FROM EMP 
+WHERE SAL > (SELECT SAL 
+                FROM EMP 
+                WHERE ENAME = 'KING')
+AND DEPTNO = (SELECT DEPTNO 
+                FROM DEPT 
+                WHERE DNAME = 'ACCOUNTING');
+            
+-- OUTPUT
+no rows selected
+```
+---
+4. WAQTD DETAILS OF THE EMPLOYEES WORKING AS SALESMAN IN THE DEPARTEMENT SALES.
+```SQL
+SELECT *
+FROM EMP
+WHERE JOB = 'SALESMAN'
+AND DEPTNO = (SELECT DEPTNO 
+                FROM DEPT 
+                WHERE DNAME = 'SALES');
+            
+-- OUTPUT
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30
+```
+---
+5. WAQTD NAME , SAL , JOB , HIREDATE OF THE EMPLOYEES WORKING IN OPERATIONS DEPARTMENT AND HIRED BEFORE KING.
+```SQL
+SELECT ENAME NAME, SAL SALARY, JOB, HIREDATE
+FROM EMP
+WHERE DEPTNO = (SELECT DEPTNO 
+                    FROM DEPT 
+                    WHERE DNAME = 'OPERATIONS')
+AND HIREDATE < (SELECT HIREDATE 
+                    FROM EMP 
+                    WHERE ENAME = 'KING');
+
+-- OUTPUT
+no rows selected
+```
+---
+6. DISPLAY ALL THE EMPLOYEES WHOSE DEPARTMET NAMES ENDING 'S'.
+```SQL
+SELECT DNAME "DEPT NAME"
+FROM DEPT
+WHERE DEPTNO IN (SELECT DEPTNO 
+                    FROM EMP 
+                    WHERE ENAME LIKE '%S');
+
+-- OUTPUT
+DEPT NAME
+--------------
+RESEARCH
+SALES
+```
+---
+7. WAQTD DNAME OF THE EMPLOYEES WHOSE NAMES HAS CHARACTER 'A' IN IT.
+```SQL
+SELECT DNAME "DEPT NAME"
+FROM DEPT
+WHERE DEPTNO IN (SELECT DEPTNO 
+                    FROM EMP 
+                    WHERE ENAME LIKE '%A%');
+
+-- OUTPUT
+DEPT NAME
+--------------
+ACCOUNTING
+RESEARCH
+SALES
+```
+---
+8. WAQTD DNAME AND LOC OF THE EMPLOYEES WHOSE SALARY IS RUPEES 800.
+```SQL
+SELECT DNAME "DEPT NAME", LOC "WORK PLACE"
+FROM DEPT
+WHERE DEPTNO IN (SELECT DEPTNO 
+                    FROM EMP 
+                    WHERE SAL = '800');
+
+-- OUTPUT
+DEPT NAME      WORK PLACE
+-------------- -------------
+RESEARCH       DALLAS   
+```
+---
+9. WAQTD DNAME OF THE EMPLOYEES WHO EARN COMISSION.
+```SQL
+SELECT DNAME "DEPT NAME"
+FROM DEPT
+WHERE DEPTNO IN (SELECT DEPTNO 
+                    FROM EMP 
+                    WHERE COMM IS NOT NULL);
+
+-- OUTPUT
+DEPT NAME
+--------------
+SALES
+```
+---
+10. WAQTD LOC OF THE EMPLOYEES IF THEY EARN COMISSION IN DEPT 40.
+```SQL
+SELECT LOC "WORK PLACE"
+FROM DEPT
+WHERE DEPTNO = 40
+AND DEPTNO IN (SELECT DEPTNO 
+                    FROM EMP 
+                    WHERE COMM IS NOT NULL);
+
+-- OUTPUT
+no rows selected
+```
+---

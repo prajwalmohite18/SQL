@@ -1,0 +1,131 @@
+## ASSIGNMENT ON SUB-QUERY WITH ΜΑΧ() & MIN():
+
+1. WAQTD NAME OF THE EMPLOYEE EARNING MAXIMUM SALARY.
+```SQL
+SELECT ENAME NAME
+FROM EMP
+WHERE SAL = (SELECT MAX(SAL) FROM EMP);
+
+-- OUTPUT
+NAME
+----------
+KING
+```
+---
+2. WAQTD NAME OF THE EMPLOYEE EARNING MINIMUM SALARY.
+```SQL
+SELECT ENAME NAME
+FROM EMP
+WHERE SAL = (SELECT MIN(SAL) FROM EMP);
+
+-- OUTPUT
+NAME
+----------
+SMITH
+```
+---
+3. WAQTD NAME AND HIREDATE OF THE EMPLOYEE HIRED BEFORE ALL THE EMPLOYEES (FIRST EMP).
+```SQL
+SELECT ENAME NAME, HIREDATE 
+FROM EMP
+WHERE HIREDATE = (SELECT MIN(HIREDATE) FROM EMP);
+
+-- OUTPUT
+NAME       HIREDATE
+---------- ---------
+SMITH      17-DEC-80
+```
+---
+4. WAQTD NAME AND HIREDATE OF THE EMPLOYEES HIRED AT THE LAST.
+```SQL
+SELECT ENAME NAME, HIREDATE 
+FROM EMP
+WHERE HIREDATE = (SELECT MAX(HIREDATE) FROM EMP);
+
+-- OUTPUT
+NAME       HIREDATE
+---------- ---------
+ADAMS      23-MAY-87
+```
+---
+5. WAQTD NAME, COMM OF THE EMPLOYEE WHO EARNS MIN COMISSION.
+```SQL
+SELECT ENAME NAME, COMM COMMISSION
+FROM EMP
+WHERE COMM = (SELECT MIN(COMM) FROM EMP);
+
+-- OUTPUT
+NAME       COMMISSION
+---------- ----------
+TURNER              0
+```
+---
+6. WAQTD NAME, SAL AND COMM OF THE EMPLOYEE EARNING MAXIMUM COMISSION.
+```SQL
+SELECT ENAME NAME, SAL SALARY, COMM COMMISSION
+FROM EMP
+WHERE COMM = (SELECT MAX(COMM) FROM EMP);
+
+-- OUTPUT
+NAME           SALARY COMMISSION
+---------- ---------- ----------
+MARTIN           1250       1400
+```
+---
+7. WAQTD DETAILS OF THE EMPLOYEE WHO HAS GREATEST EMPNO.
+```SQL
+SELECT *
+FROM EMP 
+WHERE EMPNO = (SELECT MAX(EMPNO) FROM EMP);
+
+-- OUTPUT
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10
+```
+---
+8. WAQTD DETAILS OF THE EMPLOYEES HAVING THE LEAST HIREDATE.
+```SQL
+SELECT *
+FROM EMP
+WHERE HIREDATE = (SELECT MIN(HIREDATE) FROM EMP);
+
+-- OUTPUT
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+```
+---
+9. WAOTD DETAILS OF THE EMPLOYEES EARNING LEAST ANNUAL SALARY.
+```SQL
+SELECT * 
+FROM EMP 
+WHERE (SAL*12) = (SELECT MIN(SAL*12) FROM EMP);
+
+-- OUTPUT
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20
+```
+---
+10. WAQTD NAME, ANNUAL SALARY OF THE EMPLOYEES IF THEIR ANNUAL SALARY IS MORE THAN ALL THE SALESMAN.
+```SQL
+SELECT ENAME NAME, (SAL*12) "ANNUAL SALARY" 
+FROM EMP 
+WHERE (SAL*12) > (SELECT MAX(SAL*12) 
+                    FROM EMP 
+                    WHERE JOB = 'SALESMAN');
+
+-- OUTPUT
+NAME       ANNUAL SALARY
+---------- -------------
+JONES              35700
+BLAKE              34200
+CLARK              29400
+SCOTT              36000
+KING               60000
+FORD               36000
+
+6 rows selected.
+```
+---
