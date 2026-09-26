@@ -26,4 +26,14 @@
 
 **12. [SQL sub-queries with MIN() and MAX()](sub-query_min_max.md)**
 
-**13. [SQL queriesn on sub-queries types](sub_query_types.md)**
+**13. [SQL queries on sub-queries types](sub_query_types.md)**
+
+**14. [SQL queries on Employee Manager Relation](emp_mgr_relation.md)**
+
+**15. [SQL queries on Inner Join](inner_join.md)**
+
+**16. [SQL queries on Self Join](self_join.md)**
+
+**17. [SQL queries on Multi Joins](multi_joins.md)**
+
+**18. [SQL queries on Co-related sub-query](co-related_subquery.md)**
