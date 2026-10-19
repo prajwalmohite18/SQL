@@ -38,4 +38,4 @@
 
 **18. [SQL queries on Co-related sub-query](co-related_subquery.md)**
 
-**19. [SQL queries on PARTITION BY CLAUSE](partition_by_clause.md)**
+**19. [SQL queries on PARTITION BY Clause](partition_by_clause.md)**
