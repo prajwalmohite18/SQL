@@ -37,3 +37,5 @@
 **17. [SQL queries on Multi Joins](multi_joins.md)**
 
 **18. [SQL queries on Co-related sub-query](co-related_subquery.md)**
+
+**19. [SQL queries on PARTITION BY CLAUSE](partition_by_clause.md)**
